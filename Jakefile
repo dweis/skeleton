@@ -47,7 +47,9 @@ task('test', [], function() {
 
   app.listen(3090)
 
-  var testSuites = [ ]
+  var testSuites = [ 
+    'test/controllers/welcome.test.js'
+    ]
 
   var success = true
 
