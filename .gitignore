@@ -1,0 +1,5 @@
+logs/*
+pids/*
+nohup.out
+node_modules/*
+public/styles/*
