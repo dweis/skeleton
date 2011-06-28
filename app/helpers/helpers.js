@@ -20,7 +20,7 @@ exports.dynamicHelpers = {
 }
 
 exports.helpers = {
-  site_name: function() {
-    return config.siteName
+  config: function() {
+    return config
   }
 }

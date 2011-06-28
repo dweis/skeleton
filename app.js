@@ -23,6 +23,7 @@ app.use(stylus.middleware({ src: __dirname + '/app'
 
 app.configure(function(){
   app.use(express.static(__dirname + '/public'))
+  app.use(require('express-blocks'))
   app.use(express.bodyParser())
   app.use(express.cookieParser())
   app.use(express.methodOverride())
