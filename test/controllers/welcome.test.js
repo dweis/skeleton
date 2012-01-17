@@ -1,8 +1,14 @@
+process.env.NODE_ENV = 'testing'
+
 var vows = require('vows')
   , assert = require('assert')
   , request = require('request')
+  , app = require('../../app')
 
-const BASE_URI = "http://localhost:3090/"
+app.listen(3090)
+
+const BASE_URI = 'http://localhost:3090/'
+
 
 vows
   .describe('Welcome Controller')

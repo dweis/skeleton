@@ -5,7 +5,6 @@ var application = require('./app/lib/application')
   , jade = require('jade')
   , mongoose = require('mongoose')
   , mongooseAuth = require('mongoose-auth')
-  , MongoStore = require('connect-mongodb')
   , helpers = require('./app/helpers/helpers')
   , log = require('logging').from(__filename)
   , NotFound = require('./app/lib/errors').NotFound
@@ -27,8 +26,7 @@ app.configure(function(){
   app.use(express.bodyParser())
   app.use(express.cookieParser())
   app.use(express.methodOverride())
-  app.use(express.session({ secret: config.sessionSecret
-                          , store: new MongoStore({ dbname: config.database }) }))
+  app.use(express.session({ secret: config.sessionSecret }))
   app.use(mongooseAuth.middleware())
 
   app.dynamicHelpers(helpers.dynamicHelpers)
